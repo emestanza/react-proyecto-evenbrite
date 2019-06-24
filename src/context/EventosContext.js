@@ -17,6 +17,9 @@ class EventosProvider extends Component {
         const eventos = await axios(url);
 
         console.log(eventos);
+        this.setState({
+            eventos: eventos.data.events
+        })
     }
 
     render() {
