@@ -9,12 +9,18 @@ class Formulario extends Component {
         categoria: ''
     }
 
+    //actualiza el state el formulario cuando se colocan valores en el mismo
     obtenerDatosEventoInputs = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
+    /**
+     * Los consumers se usan aquí para acceder a sus valores que son pasados en su contexto
+     * EventosConsumer provee el metodo obtenerEventos al momento del submit del formulario
+     * CategoriasConsumer provee la lista de categorías de evento provenientes de la API de evenbrite
+     */
     render() {
         return (
             <EventosConsumer>
